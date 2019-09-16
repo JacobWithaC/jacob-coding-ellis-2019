@@ -1,0 +1,43 @@
+
+
+
+<script>
+
+function myExampleFunction(){
+ let myTemp = document.getElementById('myText01').value
+   let mySum = ' '
+   document.getElementById('myDiv01').innerHTML = ' '
+
+   myArray = new Array()
+   myArray[1] = 'Super mario bros. 2'
+   myArray[2] = 'Crazy Taxi'
+   myArray[3] = 'Crazy Taxi'
+   myArray[4] = 'Crazy Taxi'
+   myArray[5] = 'Crazy Taxi'
+   myArray[6] = 'Crazy Taxi'
+   myArray[7] = 'Crazy Taxi'
+   myArray[8] = 'Crazy Taxi'
+   myArray[9] = 'Crazy Taxi'
+   myArray[10] = 'Crazy Taxi'
+
+
+   for (let myLoop=1;  myLoop <=myTemp;  myLoop++){
+      mySum += ''+myLoop+', '+  ' #: ' + myLoop + myArray[myLoop]   +'<br>'	
+     }
+   document.getElementById('myDiv01').innerHTML = mySum
+
+
+}
+
+</script>
+
+
+
+<input type=text id="myText01" value="10"><br>
+
+<input type=button value="Double click for top 10 games" ondblclick="{
+ myExampleFunction()
+}">
+
+  
+<div id="myDiv01">...</div>
