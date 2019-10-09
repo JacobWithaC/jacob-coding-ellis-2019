@@ -1,3 +1,49 @@
+<input type=button value="change" onclick="{
+   document.getElementById('myB01').style.color = 'blue'
+}">
+<b id="myB01" style="color:red"> Awesome</b><br><br>
+
+<select id="myText01" size=1 onChange="{
+   letmyTemp = document.getElementById('myText01').value
+   document.getElementById('myDiv01').border-style = myTemp
+}">
+
+<option value="groove">groove
+<option value="dotted">dotted
+<option value="...">...
+</select>
+
+<span id="myDiv01" style="border-style:groove;
+ border-width:4;
+ border-color:red;" > 
+This is a box</span><br>
+
+
+<html>
+<head>
+<style> 
+div {
+  width: 10px;
+  height: 235px;
+  background-image: url("expand2.jpg");
+  -webkit-transition: width 2s; 
+  transition: width 2s;
+}
+
+div:hover {
+  width: 370px;
+}
+</style>
+</head>
+<body>
+
+<div></div>
+
+
+
+</body>
+</html>
+
 This is <b style="color:red; background-color:blue; " > cool</b> don't you think<br>
 
 
