@@ -1,0 +1,28 @@
+<h2 align=center>Javascript Classes t2a103-classes-new-jacob</h2>
+<input type=text id="myNameInput" placeholder="Enter an animal name here" value="">
+<input id="myButton1" type="button" value="Make and show the class myAnimal"
+onclick="{
+ class myAnimal {
+  constructor(passName, passAge) {
+      this.myName = passName;
+      this.myAge = passAge;
+   }
+   myShow(){
+    document.getElementById('myDiv01').innerHTML = 'Hello '+ this.myName + '. you are ' + this.myAge + 'years old <br>'
+   }
+ }
+
+  myDog = new myAnimal('Snickers' , 5)
+  myDog.myShow()
+}"><br><br>
+<div id='myDiv01'>...</div><br>
+
+<script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+
+<input type="button" value="Use ResponsiveCode" onclick="{
+  responsiveVoice.speak('oh boy')
+}"><br><br>
+
+<input type="button" value="initilize speak" onclick="{
+   responsiveVoice.speak('wahoo', 'US English Female' , {pitch: 1, rate: 1, volume: 1})
+}"><br><br>
