@@ -1,0 +1,105 @@
+<body bgcolor="white"   onMouseMove="{
+   document.all.myLocation.value = 'left: '+event.x+', top: '+ event.y
+}">
+<input type=text id="myLocation" value=0 size=14"><br>
+<h2 align=center>Basic Canvas drawing</h2>
+
+
+<input type=button value="Big X" onclick="{
+   myContext.beginPath();
+   myContext.lineWidth = 1;   
+   myContext.moveTo(3333,2000);
+   myContext.lineTo(0, 0);
+   myContext.stroke();
+
+  myContext.beginPath();
+   myContext.lineWidth = 1;   
+   myContext.moveTo(1000,0);
+   myContext.lineTo(0, 600);
+   myContext.stroke();
+
+
+
+}">
+
+
+
+
+<input type=button value="Round boy" onclick="{
+   myContext.beginPath();
+   myContext.lineWidth = 10;
+   myContext.arc(190, 400, 70, 0, 2 * Math.PI);
+   myContext.stroke();
+
+}">
+
+
+<input type=button value=":^)" onclick="{
+
+   myContext.font = '50px Arial';
+   myContext.fillText(':^)', 165, 415);
+
+}">
+
+
+<input type=button value="Words" onclick="{
+
+   myContext.font = '20px Comic Sans MS';
+   myContext.fillText('Yee', 400, 100);
+
+   myContext.translate(400, 100);  // move rotation point from 0,0
+   myContext.rotate(60 * Math.PI / 180); // 60 in degrees
+
+   myContext.fillText('haw', 10, 10);
+   myContext.stroke();
+
+
+   myContext.resetTransform();  // move rotation point from 0,0
+
+}">
+
+<input type=button value="Hook" onclick="{
+   myContext.beginPath();
+   myContext.moveTo (300,100);
+   myContext.quadraticCurveTo(350,100,225,286);
+   myContext.stroke();
+
+}">
+
+
+<input type=button value="Make a gradient thing" onclick="{
+   let myGradient = myContext.createLinearGradient(150, 150, 200, 100);
+   myGradient.addColorStop(0.7, 'pink');
+   myGradient.addColorStop(0.5, 'green');
+   myGradient.addColorStop(0, 'purple');
+
+   myContext.fillStyle = myGradient;
+   myContext.fillRect(300, 300, 220, 220);
+
+   // reset fillstyle
+   myContext.fillStyle = 'black';
+}">
+
+<br><br>
+
+<input type=button value="Remove the gradient thing" onclick="{
+   myContext.clearRect(300, 300, 220, 220);
+}">
+
+
+<input type=button value="Clear all" onclick="{
+   myContext.clearRect(0, 0, myCanvas.width, myCanvas.height);
+}">
+
+
+<br><br>
+
+<canvas id="myCoolTag" width="1000" height="600" style="border:1px solid #000000;"></canvas>
+
+<script>
+   // set up global variables
+   let myCanvas=document.getElementById('myCoolTag');
+   let myContext=myCanvas.getContext('2d');
+
+</script>
+
