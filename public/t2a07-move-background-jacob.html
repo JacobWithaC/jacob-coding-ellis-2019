@@ -1,0 +1,29 @@
+<body id="myBody" style="background=repeat:repeat; background-size: 30%" background="catground.jpg">
+<h1 align=center>t2a02 Move Background Jacob</h1>
+
+<script>
+let myGlobalX = 0 
+let myClock
+</script>
+
+<input id="myButton01" type=button value="background move left" onclick="{
+ myTemp = '100px 0px'
+myGlobalX -= 5 
+myTemp = myGlobalX + 'px 0px' 
+document.getElementById('myBody').style.backgroundPosition = myTemp
+}">
+
+<input type=button value="Auto Background Left" onclick="{
+ clearInterval(myClock)
+myClock = setInterval(function(){
+  document.getElementById('myButton01').click()
+},100)
+}">
+
+
+
+<input type=button value="Image Right" onClick="{
+  document.getElementById('lapras').style.left = parseInt(document.getElementById('lapras').style.left) + 10 + 'px'
+}"><br><br>
+<img src="lapras.jpg" id="lapras" style="position:relative; left:0px; top:0px; height:100px; width:100px">
+
