@@ -1,0 +1,138 @@
+
+<body background="starbois.png">
+
+
+
+
+
+
+
+
+<img id="lapras" style="position:relative; width:110px; height:140px; top:0px; left:0px" src="lapras.png">
+
+<img id="barry" style="position:relative; width:30px; height:30px; top:-150px; left:398px" src="barry.png">
+
+
+
+
+<html>
+
+<p>
+
+
+<body onkeydown="{
+
+  
+
+  
+
+
+if ( myHitOther('lapras','barry') ){
+       document.getElementById('lapras')
+  //   location='http://www.google.ca'
+}
+
+
+if ( myHitOther('barry','lapras') ){
+
+       //alert('I win')
+       
+
+}
+
+
+
+
+   if (event.key == 'd') { 
+	document.getElementById('lapras').style.left = 
+	parseInt(document.getElementById('lapras').style.left) + 10 + 'px' }
+   if (event.key == 'a') { 
+	document.getElementById('lapras').style.left = 
+	parseInt(document.getElementById('lapras').style.left) - 10 + 'px' }
+   if (event.key == 's') { 
+	document.getElementById('lapras').style.top = 
+	parseInt(document.getElementById('lapras').style.top) + 10 + 'px' }
+   if (event.key == 'w') { 
+	document.getElementById('lapras').style.top = 
+	parseInt(document.getElementById('lapras').style.top) - 10 + 'px' }
+
+
+
+   if (event.key == 'ArrowRight') { 
+	document.getElementById('lapras').style.left = 
+	parseInt(document.getElementById('lapras').style.left) + 10 + 'px' }
+
+
+
+
+
+ if (event.key == 'ArrowLeft') { 
+	document.getElementById('lapras').style.left = 
+	parseInt(document.getElementById('lapras').style.left) - 10 + 'px' }
+
+ if (event.key == 'ArrowDown') { 
+	document.getElementById('lapras').style.top = 
+	parseInt(document.getElementById('lapras').style.top) + 10 + 'px' }
+ 
+if (event.key == 'ArrowUp') { 
+	document.getElementById('lapras').style.top = 
+	parseInt(document.getElementById('lapras').style.top) - 10 + 'px' }
+
+
+
+
+}">
+
+<script> var myLooping = 0 </script>
+
+<input type=button value="auto right" onclick="{
+   clearInterval(myLooping)
+   myLooping = setInterval(function(){
+   document.getElementById('barry').style.top = 
+   parseInt(document.getElementById('barry').style.top) + 10 + 'px' 
+   
+   if (parseInt(document.getElementById('barry').style.top) > 610){
+      document.getElementById('barry').style.top = '-150px'
+      document.getElementById('barry').style.left =  Math.floor(Math.random() * 1000); 'px'
+  }
+
+  }, 60)
+}">
+
+
+<script>
+
+function myHitOther(my1, my2){
+   left1   = parseInt(document.getElementById(my1).style.left)
+   right1  = left1 + parseInt(document.getElementById(my1).style.width)
+   top1    = parseInt(document.getElementById(my1).style.top)   
+   bottom1 = top1   + parseInt(document.getElementById(my1).style.height)
+   left2   = parseInt(document.getElementById(my2).style.left)
+   right2  = left2 + parseInt(document.getElementById(my2).style.width)
+   top2    = parseInt(document.getElementById(my2).style.top)   
+   bottom2 = top2   + parseInt(document.getElementById(my2).style.height)
+   if ((right1  >=  left2  ) &&      	   
+       (bottom1 >=  top2   ) &&
+       (left1   <=  right2 ) &&
+       (top1    <=  bottom2) ){
+       return true
+   }
+}
+
+
+
+</script>
+
+
+
+
+
+</BODY>
+
+</HTML>
+
+
+
+
+
+
