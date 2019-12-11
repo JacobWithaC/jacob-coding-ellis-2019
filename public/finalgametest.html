@@ -1,4 +1,3 @@
-
 <body background="starbois.png">
 
 
@@ -11,7 +10,8 @@
 <img id="lapras" style="position:relative; width:110px; height:140px; top:0px; left:0px" src="lapras.png">
 
 <img id="barry" style="position:relative; width:30px; height:30px; top:-150px; left:398px" src="barry.png">
-
+<img id="barry2" style="position:relative; width:30px; height:30px; top:-150px; left:398px" src="barry.png">
+<img id="barry3" style="position:relative; width:30px; height:30px; top:-150px; left:398px" src="barry.png">
 
 
 
@@ -21,28 +21,18 @@
 
 
 <body onkeydown="{
-
   
-
   
-
-
 if ( myHitOther('lapras','barry') ){
        document.getElementById('lapras')
-  //   location='http://www.google.ca'
+    location='http://www.google.ca'
 }
-
-
 if ( myHitOther('barry','lapras') ){
+   location.reload();
 
-       //alert('I win')
+
        
-
 }
-
-
-
-
    if (event.key == 'd') { 
 	document.getElementById('lapras').style.left = 
 	parseInt(document.getElementById('lapras').style.left) + 10 + 'px' }
@@ -55,21 +45,12 @@ if ( myHitOther('barry','lapras') ){
    if (event.key == 'w') { 
 	document.getElementById('lapras').style.top = 
 	parseInt(document.getElementById('lapras').style.top) - 10 + 'px' }
-
-
-
    if (event.key == 'ArrowRight') { 
 	document.getElementById('lapras').style.left = 
 	parseInt(document.getElementById('lapras').style.left) + 10 + 'px' }
-
-
-
-
-
  if (event.key == 'ArrowLeft') { 
 	document.getElementById('lapras').style.left = 
 	parseInt(document.getElementById('lapras').style.left) - 10 + 'px' }
-
  if (event.key == 'ArrowDown') { 
 	document.getElementById('lapras').style.top = 
 	parseInt(document.getElementById('lapras').style.top) + 10 + 'px' }
@@ -77,8 +58,8 @@ if ( myHitOther('barry','lapras') ){
 if (event.key == 'ArrowUp') { 
 	document.getElementById('lapras').style.top = 
 	parseInt(document.getElementById('lapras').style.top) - 10 + 'px' }
-
-
+if ( getElementById('myScore')  .value > 3){ 
+location='http://www.google.ca'}
 
 
 }">
@@ -94,14 +75,16 @@ if (event.key == 'ArrowUp') {
    if (parseInt(document.getElementById('barry').style.top) > 610){
       document.getElementById('barry').style.top = '-150px'
       document.getElementById('barry').style.left =  Math.floor(Math.random() * 1000); 'px'
-  }
+        myTotal = myTotal + 1
+  document.getElementById('myScore').value = myTotal
 
+
+  }
   }, 60)
 }">
 
 
 <script>
-
 function myHitOther(my1, my2){
    left1   = parseInt(document.getElementById(my1).style.left)
    right1  = left1 + parseInt(document.getElementById(my1).style.width)
@@ -118,21 +101,14 @@ function myHitOther(my1, my2){
        return true
    }
 }
-
-
-
 </script>
 
+<script>
+var myTotal = 0
+</script>
 
-
-
+<input type="text" id=myScore value=0>
 
 </BODY>
 
 </HTML>
-
-
-
-
-
-
